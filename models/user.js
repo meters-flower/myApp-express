@@ -1,8 +1,10 @@
-const mongoose = require('../config/db')
+var mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
     username: String,
-    password: String
+    password: String,
+    email: String,
+    createTime: { type: Date, default: Date.now }
 })
 
 const userModel = mongoose.model('user', userSchema);
